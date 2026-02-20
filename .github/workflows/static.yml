@@ -1,10 +1,9 @@
-# GitHub Actions workflow for deploying Astranex static site to GitHub Pages
 name: Deploy Astranex Website
 
 on:
   push:
-    branches: ["main"]   # Trigger on pushes to main branch
-  workflow_dispatch:     # Allow manual trigger from Actions tab
+    branches: ["test-branch"]
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -32,12 +31,11 @@ jobs:
       - name: Upload static site files
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload only the static site files in root
           path: |
             index.html
             styles.css
             script.js
-            photo   # include your photo folder if needed
+            photo
 
       - name: Deploy to GitHub Pages
         id: deployment
