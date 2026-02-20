@@ -1,0 +1,45 @@
+# 🚀 Astranex Defence
+
+Building next-generation sovereign defence technologies with precision-engineered digital infrastructure.
+
+---
+
+
+## 🧭 Vision
+
+Astranex Defence aims to develop high-performance, strategically aligned defence systems powered by advanced engineering principles and disciplined execution.
+
+
+---
+
+
+
+## 📈 Strategic Direction
+
+Astranex Defence is positioned as a forward-looking defence technology startup focused on:
+
+- Autonomous systems  
+- Secure digital infrastructure  
+- Advanced defence analytics  
+- Sovereign-grade engineering solutions  
+
+
+---
+
+## 🤝 Future Roadmap
+
+- Advanced system modules showcase  
+- Defence product architecture presentations  
+- Investor relations portal  
+- Technical documentation section  
+
+---
+
+## 📩 Contact
+
+astranexdefence@gmail.com
+
+
+---
+
+> Precision. Sovereignty. Strategic Execution.
