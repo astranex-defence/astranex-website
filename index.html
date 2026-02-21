@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,12 +17,18 @@
     <div class="grid-overlay"></div>
 
     <header class="sticky-header">
-        <div class="logo">ASTRANEX DEFENCE</div>
-        <a href="#mission">Mission</a>
-        <a href="#vision">Vision</a>
-        <a href="#team">Our Team</a>
-        <a href="#about">About Us</a>
-        <a href="#contact">Contact</a>
+        <a href="#hero" class="brand" aria-label="Astranex Defence home">
+            <span class="brand-symbol">
+                <img src="photo/1st .jpg" alt="Astranex Defence logo" class="brand-logo">
+            </span>
+            <span class="logo">ASTRANEX DEFENCE</span>
+        </a>
+        <nav class="main-nav" aria-label="Primary">
+            <a href="#mission">Mission</a>
+            <a href="#vision">Vision</a>
+            <a href="#team">Our Team</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
         </nav>
         <div class="system-status">SYSTEM STATUS: <span class="active">ACTIVE</span></div>
     </header>
@@ -144,30 +150,46 @@
 
         <section id="contact" class="content-section">
             <div class="section-number">04</div>
-            <div class="container form-container">
+            <div class="container">
                 <h2 class="section-title">CONTACT</h2>
-                <form class="contact-form">
-                    <div class="form-group">
-                        <label for="name">NAME</label>
-                        <input type="text" id="name" name="name" required>
+                <div class="form-container">
+                    <div class="terminal-header">
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        <span class="terminal-dot"></span>
+                        SECURE CHANNEL &nbsp;// &nbsp;ASTRANEX-DEFENCE.SYS
                     </div>
-                    <div class="form-group">
-                        <label for="email">EMAIL</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="org">ORGANIZATION</label>
-                        <input type="text" id="org" name="org">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">MESSAGE</label>
-                        <textarea id="message" name="message" rows="4" required></textarea>
-                    </div>
-                    <div class="form-footer">
-                        <span class="secure-note">All inquiries are handled under secure communication protocols.</span>
-                        <button type="submit" class="btn btn-submit">Initiate Secure Contact</button>
-                    </div>
-                </form>
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">NAME</label>
+                                <input type="text" id="name" name="name" placeholder="Full name" required>
+                                <span class="field-line"></span>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">EMAIL</label>
+                                <input type="email" id="email" name="email" placeholder="you@domain.com" required>
+                                <span class="field-line"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="org">ORGANIZATION</label>
+                            <input type="text" id="org" name="org" placeholder="Ministry / Agency / Company">
+                            <span class="field-line"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">MESSAGE</label>
+                            <textarea id="message" name="message" rows="5" placeholder="State your inquiry..."
+                                required></textarea>
+                            <span class="field-line"></span>
+                        </div>
+                        <div class="form-footer">
+                            <span class="secure-note">All inquiries are handled under secure communication
+                                protocols.</span>
+                            <button type="submit" class="btn-submit">Initiate Secure Contact</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </section>
     </main>
@@ -181,9 +203,12 @@
                     <p class="footer-desc">Autonomous ground systems and edge-AI security platforms engineered for
                         mission-critical environments.</p>
                     <div class="social-links">
-                        <a href="https://www.linkedin.com/company/astranex-defence" target="_blank"
+                        <a href="https://www.linkedin.com/in/astranex-defence-3094803b2/" target="_blank"
                             class="social-icon">LinkedIn</a>
-                        <a href="mailto:astranexdefence@gmail.com" class="social-icon">Email</a>
+                        <a href="https://mail.google.com/mail/?view=cm&to=astranexdefence@gmail.com" target="_blank"
+                            class="social-icon">Email</a>
+                        <a href="https://www.youtube.com/@astranexdefence" target="_blank"
+                            class="social-icon social-icon--youtube">YouTube</a>
                     </div>
                 </div>
 
