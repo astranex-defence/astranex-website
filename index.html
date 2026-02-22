@@ -2,63 +2,130 @@
 <html lang="en">
 
 <head>
+    <!-- =============================================
+         META & SEO
+         ============================================= -->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description"
+        content="Astranex Defence — Autonomous ground systems and edge-AI security platforms engineered for mission-critical environments.">
+    <meta name="theme-color" content="#000000">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Astranex Defence | Intelligent Autonomy">
+    <meta property="og:description"
+        content="Autonomous defence and security systems powered by advanced robotics and edge-AI.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://astranex-defence.github.io/astranex-website/">
+
     <title>Astranex Defence | Intelligent Autonomy</title>
+
+    <!-- =============================================
+         FAVICON SETUP (relative paths for GitHub Pages)
+         ============================================= -->
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="assets/icons/site.webmanifest">
+
+    <!-- =============================================
+         FONTS
+         ============================================= -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&family=Inter:wght@300;400;500&display=swap"
         rel="stylesheet">
+
+    <!-- =============================================
+         STYLES
+         ============================================= -->
     <link rel="stylesheet" href="styles.css">
-    <!-- Favicon Setup -->
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/favicon-16x16.png">
-    <link rel="shortcut icon" href="/assets/icons/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
-    <link rel="manifest" href="/assets/icons/site.webmanifest">
 </head>
 
 <body>
-    <div class="grid-overlay"></div>
+    <!-- Subtle grid background overlay -->
+    <div class="grid-overlay" aria-hidden="true"></div>
 
-    <header class="sticky-header">
-        <a href="#hero" class="brand" aria-label="Astranex Defence home">
-            <span class="brand-symbol">
+    <!-- Scroll progress bar (top of viewport) -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- =============================================
+         HEADER / NAVIGATION
+         ============================================= -->
+    <header class="sticky-header" role="banner">
+        <!-- Brand -->
+        <a href="#hero" class="brand" aria-label="Astranex Defence — return to top">
+            <span class="brand-symbol" aria-hidden="true">
                 <img src="photo/1st .jpg" alt="Astranex Defence logo" class="brand-logo">
             </span>
             <span class="logo">ASTRANEX DEFENCE</span>
         </a>
-        <nav class="main-nav" aria-label="Primary">
+
+        <!-- Desktop navigation -->
+        <nav class="main-nav" aria-label="Primary navigation">
             <a href="#mission">Mission</a>
             <a href="#vision">Vision</a>
             <a href="#team">Our Team</a>
-            <a href="#about">About Us</a>
+            <a href="#about">About</a>
             <a href="#contact">Contact</a>
         </nav>
-        <div class="system-status">SYSTEM STATUS: <span class="active">ACTIVE</span></div>
+
+        <!-- System status badge -->
+        <div class="system-status" aria-label="System status">SYSTEM: <span class="active"
+                aria-live="polite">ACTIVE</span></div>
+
+        <!-- Mobile hamburger button -->
+        <button class="hamburger" id="hamburger-btn" aria-label="Toggle navigation menu" aria-expanded="false"
+            aria-controls="mobile-menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
     </header>
 
+    <!-- Mobile navigation drawer -->
+    <nav class="mobile-nav" id="mobile-menu" aria-label="Mobile navigation" aria-hidden="true">
+        <a href="#mission" class="mobile-nav-link">Mission</a>
+        <a href="#vision" class="mobile-nav-link">Vision</a>
+        <a href="#team" class="mobile-nav-link">Our Team</a>
+        <a href="#about" class="mobile-nav-link">About</a>
+        <a href="#contact" class="mobile-nav-link">Contact</a>
+    </nav>
+
+    <!-- =============================================
+         MAIN CONTENT
+         ============================================= -->
     <main>
-        <section id="hero" class="hero-section">
+
+        <!-- ── HERO ───────────────────────────────── -->
+        <section id="hero" class="hero-section" aria-labelledby="hero-heading">
             <div class="container">
                 <div class="hero-content">
-                    <h1>INTELLIGENT AUTONOMY FOR CRITICAL SECURITY</h1>
+                    <h1 id="hero-heading">INTELLIGENT AUTONOMY FOR CRITICAL SECURITY</h1>
                     <p class="subtext">Autonomous defence and security systems powered by advanced robotics and edge-AI.
                     </p>
                     <div class="cta-group">
-                        <a href="#team" class="btn btn-primary">Meet The Team</a>
-                        <a href="#contact" class="btn btn-secondary">Request Briefing</a>
+                        <a href="#team" class="btn btn-primary" id="cta-team">Meet The Team</a>
+                        <a href="#contact" class="btn btn-secondary" id="cta-briefing">Request Briefing</a>
                     </div>
+                </div>
+
+                <!-- Scroll indicator — visible on mobile & desktop -->
+                <div class="scroll-indicator" aria-hidden="true">
+                    <span class="scroll-indicator-label">Scroll</span>
+                    <span class="scroll-indicator-line"></span>
                 </div>
             </div>
         </section>
 
-        <section id="mission" class="content-section">
-            <div class="section-number">01</div>
+        <!-- ── MISSION ────────────────────────────── -->
+        <section id="mission" class="content-section" aria-labelledby="mission-heading">
+            <div class="section-number" aria-hidden="true">01</div>
             <div class="container centered-layout">
-                <div class="divider-top"></div>
-                <h2 class="section-title">MISSION</h2>
+                <div class="divider-top" aria-hidden="true"></div>
+                <h2 class="section-title" id="mission-heading">MISSION</h2>
                 <p class="mission-text">
                     Our mission is to build autonomous defence and security systems that reduce human risk in dangerous
                     environments through intelligent robotics and edge-AI technologies.
@@ -66,10 +133,11 @@
             </div>
         </section>
 
-        <section id="vision" class="content-section">
-            <div class="section-number">02</div>
+        <!-- ── VISION ─────────────────────────────── -->
+        <section id="vision" class="content-section" aria-labelledby="vision-heading">
+            <div class="section-number" aria-hidden="true">02</div>
             <div class="container centered-layout">
-                <h2 class="section-title">VISION</h2>
+                <h2 class="section-title" id="vision-heading">VISION</h2>
                 <p class="vision-text">
                     We envision a future where intelligent autonomous systems safeguard critical infrastructure and
                     high-risk environments, allowing humans to focus on strategy and decision-making rather than
@@ -78,152 +146,178 @@
             </div>
         </section>
 
-
-
-        <section id="team" class="content-section">
-            <div class="section-number">03</div>
+        <!-- ── TEAM ───────────────────────────────── -->
+        <section id="team" class="content-section" aria-labelledby="team-heading">
+            <div class="section-number" aria-hidden="true">03</div>
             <div class="container">
-                <h2 class="section-title">OUR TEAM</h2>
+                <h2 class="section-title" id="team-heading">OUR TEAM</h2>
                 <div class="team-grid">
-                    <div class="team-member">
-                        <img src="photo/Milanjyoti Ray.jpeg" alt="Milanjyoti Ray" class="team-photo">
+
+                    <article class="team-member">
+                        <img src="photo/Milanjyoti Ray.jpeg" alt="Portrait of Milanjyoti Ray" class="team-photo"
+                            loading="lazy">
                         <div class="member-info">
                             <h3>Milanjyoti Ray</h3>
-                            <div class="role">Founder & CEO, Chief AI Product Architect</div>
+                            <div class="role">Founder &amp; CEO, Chief AI Product Architect</div>
                             <div class="expertise">Expertise: Autonomous Systems Strategy, AI Architecture, Defence
                                 Product Vision</div>
-                            <a href="https://www.linkedin.com/in/milanjyotiray/" class="linkedin-link"
-                                target="_blank">LinkedIn →</a>
+                            <a href="https://www.linkedin.com/in/milanjyotiray/" class="linkedin-link" target="_blank"
+                                rel="noopener noreferrer" aria-label="Milanjyoti Ray on LinkedIn">LinkedIn →</a>
                         </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="photo/Omkar Jadhav.jpeg" alt="Omkar Jadhav" class="team-photo">
+                    </article>
+
+                    <article class="team-member">
+                        <img src="photo/Omkar Jadhav.jpeg" alt="Portrait of Omkar Jadhav" class="team-photo"
+                            loading="lazy">
                         <div class="member-info">
                             <h3>Omkar Jadhav</h3>
-                            <div class="role">Co-Founder & CTO, Head of Mechatronics & Robotic Systems</div>
+                            <div class="role">Co-Founder &amp; CTO, Head of Mechatronics &amp; Robotic Systems</div>
                             <div class="expertise">Expertise: Robotics Engineering, Mechanical Design, Embedded Systems
                             </div>
                             <a href="https://www.linkedin.com/in/omkar-jadhav-399158227/" class="linkedin-link"
-                                target="_blank">LinkedIn →</a>
+                                target="_blank" rel="noopener noreferrer" aria-label="Omkar Jadhav on LinkedIn">LinkedIn
+                                →</a>
                         </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="photo/Divya Prakash.jpeg" alt="Divya Prakash" class="team-photo">
+                    </article>
+
+                    <article class="team-member">
+                        <img src="photo/Divya Prakash.jpeg" alt="Portrait of Divya Prakash" class="team-photo"
+                            loading="lazy">
                         <div class="member-info">
                             <h3>Divya Prakash</h3>
-                            <div class="role">Co-Founder, Head of AI Security & Community</div>
+                            <div class="role">Co-Founder, Head of AI Security &amp; Community</div>
                             <div class="expertise">Expertise: AI Security Systems, Ethical AI Governance, Strategic
                                 Outreach</div>
                             <a href="https://www.linkedin.com/in/divya-prakash-5b564b273/" class="linkedin-link"
-                                target="_blank">LinkedIn →</a>
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="Divya Prakash on LinkedIn">LinkedIn →</a>
                         </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="photo/Kunal kumar.jpeg" alt="Kunal Kumar" class="team-photo">
+                    </article>
+
+                    <article class="team-member">
+                        <img src="photo/Kunal kumar.jpeg" alt="Portrait of Kunal Kumar" class="team-photo"
+                            loading="lazy">
                         <div class="member-info">
                             <h3>Kunal Kumar</h3>
-                            <div class="role">Founding Robotics & Embedded Systems Engineer</div>
+                            <div class="role">Founding Robotics &amp; Embedded Systems Engineer</div>
                             <div class="expertise">Expertise: Embedded Hardware, Mobility Systems, Control Architecture
                             </div>
                             <a href="https://www.linkedin.com/in/kunal-kumar-bb0775247/" class="linkedin-link"
-                                target="_blank">LinkedIn →</a>
+                                target="_blank" rel="noopener noreferrer" aria-label="Kunal Kumar on LinkedIn">LinkedIn
+                                →</a>
                         </div>
-                    </div>
-                    <div class="team-member">
-                        <img src="photo/Bappaditya Paul.jpeg" alt="Bappaditya Paul" class="team-photo">
+                    </article>
+
+                    <article class="team-member">
+                        <img src="photo/Bappaditya Paul.jpeg" alt="Portrait of Bappaditya Paul" class="team-photo"
+                            loading="lazy">
                         <div class="member-info">
                             <h3>Bappaditya Paul</h3>
-                            <div class="role">Design & ML Systems Engineer</div>
+                            <div class="role">Design &amp; ML Systems Engineer</div>
                             <div class="expertise">Expertise: Machine Learning Systems, Interface Design, AI Deployment
                             </div>
                             <a href="https://www.linkedin.com/in/bappaditya-paul-009669317/" class="linkedin-link"
-                                target="_blank">LinkedIn →</a>
+                                target="_blank" rel="noopener noreferrer"
+                                aria-label="Bappaditya Paul on LinkedIn">LinkedIn →</a>
                         </div>
-                    </div>
+                    </article>
+
                 </div>
             </div>
         </section>
 
-
-
-        <section id="about" class="content-section">
+        <!-- ── ABOUT ──────────────────────────────── -->
+        <section id="about" class="content-section" aria-labelledby="about-heading">
             <div class="container centered-layout">
-                <h2 class="section-title">ABOUT ASTRANEX</h2>
+                <h2 class="section-title" id="about-heading">ABOUT ASTRANEX</h2>
                 <p class="about-text">Astranex Defence is an autonomous systems company focused on modular robotic
                     platforms and edge-AI security technologies designed for mission-critical environments.</p>
             </div>
         </section>
 
-        <section id="contact" class="content-section">
-            <div class="section-number">04</div>
+        <!-- ── CONTACT ────────────────────────────── -->
+        <section id="contact" class="content-section" aria-labelledby="contact-heading">
+            <div class="section-number" aria-hidden="true">04</div>
             <div class="container">
-                <h2 class="section-title">CONTACT</h2>
-                <div class="form-container">
-                    <div class="terminal-header">
+                <h2 class="section-title" id="contact-heading">CONTACT</h2>
+                <div class="form-container" role="region" aria-label="Secure contact form">
+                    <!-- Terminal-style header bar -->
+                    <div class="terminal-header" aria-hidden="true">
                         <span class="terminal-dot"></span>
                         <span class="terminal-dot"></span>
                         <span class="terminal-dot"></span>
                         SECURE CHANNEL &nbsp;// &nbsp;ASTRANEX-DEFENCE.SYS
                     </div>
-                    <form class="contact-form" id="contact-form">
+
+                    <form class="contact-form" id="contact-form" novalidate>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">NAME</label>
-                                <input type="text" id="name" name="name" placeholder="Full name" required>
-                                <span class="field-line"></span>
+                                <input type="text" id="name" name="name" placeholder="Full name" required
+                                    autocomplete="name">
+                                <span class="field-line" aria-hidden="true"></span>
                             </div>
                             <div class="form-group">
                                 <label for="email">EMAIL</label>
-                                <input type="email" id="email" name="email" placeholder="you@domain.com" required>
-                                <span class="field-line"></span>
+                                <input type="email" id="email" name="email" placeholder="you@domain.com" required
+                                    autocomplete="email">
+                                <span class="field-line" aria-hidden="true"></span>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="org">ORGANIZATION</label>
-                            <input type="text" id="org" name="org" placeholder="Ministry / Agency / Company">
-                            <span class="field-line"></span>
+                            <input type="text" id="org" name="org" placeholder="Ministry / Agency / Company"
+                                autocomplete="organization">
+                            <span class="field-line" aria-hidden="true"></span>
                         </div>
                         <div class="form-group">
                             <label for="message">MESSAGE</label>
                             <textarea id="message" name="message" rows="5" placeholder="State your inquiry..."
                                 required></textarea>
-                            <span class="field-line"></span>
+                            <span class="field-line" aria-hidden="true"></span>
                         </div>
                         <div class="form-footer">
                             <span class="secure-note">All inquiries are handled under secure communication
                                 protocols.</span>
-                            <button type="submit" class="btn-submit">Initiate Secure Contact</button>
+                            <button type="submit" class="btn-submit" id="submit-btn">Initiate Secure Contact</button>
                         </div>
                     </form>
                 </div>
             </div>
         </section>
+
     </main>
 
-    <footer class="main-footer">
+    <!-- =============================================
+         FOOTER
+         ============================================= -->
+    <footer class="main-footer" role="contentinfo">
         <div class="container">
-            <div class="footer-top-border"></div>
             <div class="footer-grid">
+
+                <!-- Brand column -->
                 <div class="footer-col brand-col">
                     <h4 class="footer-heading brand">ASTRANEX DEFENCE</h4>
                     <p class="footer-desc">Autonomous ground systems and edge-AI security platforms engineered for
                         mission-critical environments.</p>
-                    <div class="social-links">
+                    <nav class="social-links" aria-label="Social media links">
                         <a href="https://www.linkedin.com/in/astranex-defence-3094803b2/" target="_blank"
-                            class="social-icon">LinkedIn</a>
+                            rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">LinkedIn</a>
                         <a href="https://mail.google.com/mail/?view=cm&to=astranexdefence@gmail.com" target="_blank"
-                            class="social-icon">Email</a>
-                        <a href="https://www.youtube.com/@astranexdefence" target="_blank"
-                            class="social-icon social-icon--youtube">YouTube</a>
-                        <a href="https://www.instagram.com/astranexdefence/" target="_blank"
-                            class="social-icon social-icon--instagram">Instagram</a>
+                            rel="noopener noreferrer" class="social-icon" aria-label="Email">Email</a>
+                        <a href="https://www.youtube.com/@astranexdefence" target="_blank" rel="noopener noreferrer"
+                            class="social-icon social-icon--youtube" aria-label="YouTube">YouTube</a>
+                        <a href="https://www.instagram.com/astranexdefence/" target="_blank" rel="noopener noreferrer"
+                            class="social-icon social-icon--instagram" aria-label="Instagram">Instagram</a>
                         <a href="https://www.facebook.com/profile.php?id=61588546832508" target="_blank"
-                            class="social-icon social-icon--facebook">Facebook</a>
-                    </div>
+                            rel="noopener noreferrer" class="social-icon social-icon--facebook"
+                            aria-label="Facebook">Facebook</a>
+                        <a href="https://x.com/astranexdefence" target="_blank" rel="noopener noreferrer"
+                            class="social-icon social-icon--x" aria-label="X (formerly Twitter)">X</a>
+                    </nav>
                 </div>
 
-
-
+                <!-- Company links -->
                 <div class="footer-col">
                     <h4 class="footer-heading">COMPANY</h4>
                     <ul class="footer-nav">
@@ -231,35 +325,44 @@
                         <li><a href="#vision">Vision</a></li>
                         <li><a href="#team">Our Team</a></li>
                         <li><a href="#about">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
+                        <li><a href="#contact">Careers</a></li>
                     </ul>
                 </div>
 
+                <!-- Support links -->
                 <div class="footer-col">
                     <h4 class="footer-heading">SUPPORT</h4>
                     <ul class="footer-nav">
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">Technical Overview</a></li>
+                        <li><a href="#contact">Documentation</a></li>
+                        <li><a href="#contact">Technical Overview</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href="#">Secure Inquiry</a></li>
+                        <li><a href="#contact">Secure Inquiry</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="footer-legal">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Compliance</a>
-                <a href="#">Security Statement</a>
-            </div>
+            <!-- Legal links -->
+            <nav class="footer-legal" aria-label="Legal links">
+                <a href="#contact">Privacy Policy</a>
+                <a href="#contact">Terms of Service</a>
+                <a href="#contact">Compliance</a>
+                <a href="#contact">Security Statement</a>
+            </nav>
 
+            <!-- Bottom bar -->
             <div class="footer-bottom">
                 <div class="copyright">© 2026 Astranex Defence. All rights reserved.</div>
-                <div class="footer-status"><span class="status-dot">●</span> System Status: Active</div>
+                <div class="footer-status" aria-label="System online">
+                    <span class="status-dot-live" aria-hidden="true"></span>
+                    System Status: Active
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- =============================================
+         SCRIPTS
+         ============================================= -->
     <script src="script.js"></script>
 </body>
 
