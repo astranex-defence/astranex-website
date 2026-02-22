@@ -452,11 +452,7 @@ p {
     min-height: 100svh;
     display: flex;
     align-items: center;
-    padding-top: var(--header-h);
-    position: relative;
-    z-index: 2;
-    border-bottom: 1px solid var(--border-color);
-    overflow: hidden;
+    justify-content: center;
 }
 
 .hero-content {
@@ -470,6 +466,10 @@ p {
     margin-bottom: var(--spacing-lg);
     font-weight: 300;
     letter-spacing: 0.5px;
+}
+
+.hero-section .container {
+    padding-bottom: 100px;
 }
 
 /* CTA button row */
@@ -1242,7 +1242,8 @@ p {
         display: none;
     }
     .scroll-indicator {
-    bottom: 16px;
+    position: absolute;
+    bottom: 40px;
     }
 
     /* replaced by mobile drawer */
