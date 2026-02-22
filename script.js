@@ -45,9 +45,6 @@ if (scrollIndicator && heroSection) {
 
     heroObserver.observe(heroSection);
 }
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // run once on load
-
     /* ──────────────────────────────────────────
        1. MOBILE HAMBURGER NAVIGATION
        ────────────────────────────────────────── */
