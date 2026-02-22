@@ -45,10 +45,14 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!isOpen) mobileMenu.classList.remove('open');
     }
 
+    if (hamburgerBtn && mobileMenu) {
     hamburgerBtn.addEventListener('click', () => {
         const willOpen = !mobileMenu.classList.contains('open');
-        toggleMenu(willOpen);
-    });
+        mobileMenu.classList.toggle('open', willOpen);
+        hamburgerBtn.setAttribute('aria-expanded', willOpen);
+        mobileMenu.setAttribute('aria-hidden', !willOpen);
+       });
+    }
 
     // Close mobile nav when any link is clicked
     mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
