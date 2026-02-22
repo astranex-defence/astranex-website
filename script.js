@@ -20,13 +20,26 @@ document.addEventListener('DOMContentLoaded', () => {
         // Drive the CSS variable that sets the progress bar width
         document.documentElement.style.setProperty('--scroll-pct', pct.toFixed(2) + '%');
 
-        // Hide scroll indicator after user scrolls 10% of hero height
-        if (scrollIndicator && heroSection) {
-            const threshold = heroSection.offsetHeight * 0.1;
-            scrollIndicator.style.opacity = scrollTop > threshold ? '0' : '';
-            scrollIndicator.style.pointerEvents = scrollTop > threshold ? 'none' : '';
-        }
-    }
+      // Hero visibility observer (more stable than scroll math)
+       if (scrollIndicator && heroSection) {
+          const heroObserver = new IntersectionObserver(
+             (entries) => {
+                entries.forEach(entry => {
+                   if (entry.isIntersecting) {
+                      scrollIndicator.style.opacity = '1';
+                      scrollIndicator.style.pointerEvents = 'auto';
+                   } else {
+                      scrollIndicator.style.opacity = '0';
+                      scrollIndicator.style.pointerEvents = 'none';
+                   }
+                });
+             },
+             {
+                threshold: 0.25
+             }
+          );
+          heroObserver.observe(heroSection);
+       }
 
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll(); // run once on load
