@@ -456,6 +456,7 @@ p {
     position: relative;
     z-index: 2;
     border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
 }
 
 .hero-content {
@@ -1097,7 +1098,7 @@ p {
    ────────────────────────────────────────────── */
 .scroll-indicator {
     position: absolute;
-    bottom: 32px;
+    bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -1241,7 +1242,7 @@ p {
         display: none;
     }
     .scroll-indicator {
-    bottom: 24px;
+    bottom: 16px;
     }
 
     /* replaced by mobile drawer */
