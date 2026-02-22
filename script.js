@@ -69,3 +69,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
     }
 });
+
+document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formData = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        org: document.getElementById("org").value,
+        message: document.getElementById("message").value
+    };
+
+    fetch("https://script.google.com/macros/s/AKfycby_sbDSaXX5Mqyu0KpnxKndmOcu6k8JREYxiB7MRS67YO0E24KHOsHUEoN4bpsUXqpB/exec", {
+        method: "POST",
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert("Message sent successfully.");
+        document.getElementById("contact-form").reset();
+    })
+    .catch(error => {
+        alert("Error sending message.");
+    });
+});
