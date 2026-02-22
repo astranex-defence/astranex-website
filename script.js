@@ -5,42 +5,46 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    /* ──────────────────────────────────────────
-       0. SCROLL PROGRESS BAR + SCROLL INDICATOR
-       ────────────────────────────────────────── */
-    const scrollBar = document.getElementById('scroll-progress');
-    const scrollIndicator = document.querySelector('.scroll-indicator');
-    const heroSection = document.getElementById('hero');
+/* ──────────────────────────────────────────
+   0. SCROLL PROGRESS BAR
+   ────────────────────────────────────────── */
+const scrollIndicator = document.querySelector('.scroll-indicator');
+const heroSection = document.getElementById('hero');
 
-    function onScroll() {
-        const scrollTop = window.scrollY;
-        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-        const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+function updateScrollProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    document.documentElement.style.setProperty('--scroll-pct', pct.toFixed(2) + '%');
+}
 
-        // Drive the CSS variable that sets the progress bar width
-        document.documentElement.style.setProperty('--scroll-pct', pct.toFixed(2) + '%');
+window.addEventListener('scroll', updateScrollProgress, { passive: true });
+updateScrollProgress();
 
-      // Hero visibility observer (more stable than scroll math)
-       if (scrollIndicator && heroSection) {
-          const heroObserver = new IntersectionObserver(
-             (entries) => {
-                entries.forEach(entry => {
-                   if (entry.isIntersecting) {
-                      scrollIndicator.style.opacity = '1';
-                      scrollIndicator.style.pointerEvents = 'auto';
-                   } else {
-                      scrollIndicator.style.opacity = '0';
-                      scrollIndicator.style.pointerEvents = 'none';
-                   }
-                });
-             },
-             {
-                threshold: 0.25
-             }
-          );
-          heroObserver.observe(heroSection);
-       }
 
+/* ──────────────────────────────────────────
+   HERO SCROLL INDICATOR VISIBILITY
+   ────────────────────────────────────────── */
+if (scrollIndicator && heroSection) {
+    const heroObserver = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    scrollIndicator.style.opacity = '1';
+                    scrollIndicator.style.pointerEvents = 'auto';
+                } else {
+                    scrollIndicator.style.opacity = '0';
+                    scrollIndicator.style.pointerEvents = 'none';
+                }
+            });
+        },
+        {
+            threshold: 0.3
+        }
+    );
+
+    heroObserver.observe(heroSection);
+}
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll(); // run once on load
 
