@@ -1245,7 +1245,7 @@ p {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 28px;
+    bottom: 24px;
     }
 
     /* replaced by mobile drawer */
