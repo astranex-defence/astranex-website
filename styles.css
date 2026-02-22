@@ -449,11 +449,12 @@ p {
    7. HERO SECTION
    ────────────────────────────────────────────── */
 .hero-section {
-    min-height: 100vh;
+    min-height: 100svh;
     display: flex;
     align-items: center;
     padding-top: var(--header-h);
     position: relative;
+    z-index: 2;
     border-bottom: 1px solid var(--border-color);
 }
 
