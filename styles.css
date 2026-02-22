@@ -1500,11 +1500,14 @@ p {
 
     .cta-group {
         flex-direction: column;
+        margin-top: 24px;
     }
 
     .btn {
         width: 100%;
         justify-content: center;
+        min-height: 44px;
+        padding: 12px 20px;
     }
 
     .brand-symbol {
